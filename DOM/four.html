@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 4</title>
+</head>
+<body style="background-color: #212121; color: white;">
+
+    <ul class="languages ">
+
+        <li>Javasript</li>
+    </ul>
+    
+</body>
+
+<script>
+    //add
+//     function a(langname) {
+//    const p =  document.createElement('li')    // but this method is less optimised , we can use it efficienlt
+//      p.innerHTML = langname
+//      document.querySelector('.languages').appendChild(p)
+// }
+//     a("python");
+//     a("typescript");
+
+    function a(langname) {
+    const p =  document.createElement('li')  
+    const z = document.createTextNode(langname);
+    p.appendChild(z);
+     document.querySelector('.languages').appendChild(p)
+}  
+
+    a("python");
+    a("typescript");
+     a("p");
+    a("ty");
+     a("pyth");
+    a("typet");
+    
+    
+
+
+    // edit
+    // const p = document.querySelector('.languages');
+    // console.log(p);       //same less efficient , but we can use
+    // p.children[1].textContent = "lellllo"
+      
+    // use rdplace method
+    const q = document.querySelector('.languages');
+    const p =  document.createElement('li') 
+     p.innerHTML = "hzz"
+     q.children[1].replaceWith(p);
+
+
+     //remove
+
+     q.children[2].remove();  
+
+
+  
+
+</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   <style>
+    #start,
+#stop {
+    position: fixed;
+    top: 20px;
+}
+
+#start {
+    left: 20px;
+}
+
+#stop {
+    left: 90px;
+}
+   </style>
+
+</head>
+
+
+<body>
+    <h1>Chai aur Javascript</h1>
+
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <h1>Chat le</h1>
+</body>
+<script>
+
+    // const sayDate = function(str){
+    //     console.log(str, Date.now());
+    // }
+    
+   const p = document.querySelector('h1');
+
+      const addfxn =  function() {     
+         const z = document.createElement("div")
+         z.innerHTML = `<h2> Hey buddies </h2>`
+         z.style.backgroundColor = "red";
+         p.appendChild(z);
+    }
+     let  intervalId;
+    document.querySelector('#start').addEventListener('click' , function(e){
+        intervalId =  setInterval(()=>{
+        addfxn(); 
+    } , 1000)
+    })
+
+    
+    document.querySelector('#stop').addEventListener('click' , function(e){
+          clearInterval(intervalId);
+    })
+          
+    
+
+
+  
+
+
+</script>
+</html>

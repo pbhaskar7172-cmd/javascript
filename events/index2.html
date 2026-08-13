@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    
+
+    const p = document.querySelector('h1');
+
+    function changetext() {
+        p.innerHTML = "JS IS THE BEST SERIES";
+    }
+   
+    setTimeout( changetext , 2000);     // we did not use the changetext() as we want to exectue after 2 sec , that will be done by the timeout , if we would have used the () then immediate efecct would have happened  , now the question will be if we want to give the input in the () , then how to give that , so we can use the arrow function , and then call the actualk functuion in that arrow fucntion , see in the html3
+
+    // //()=>{
+    //    changetext(); 
+    // } 
+  
+    const addfxn =  function() {
+         const z = document.createElement("div")
+         z.innerHTML = `<h2> Hey buddies </h2>`
+         z.style.backgroundColor = "red";
+         p.appendChild(z);
+    }
+
+   const st =  setTimeout( addfxn, 5000)
+
+   // We can stop the scheduled timeout using clearTimeout().
+// The browser's Web API handles the setTimeout() call and keeps it
+// scheduled until the given time. clearTimeout() cancels that timeout
+// before it gets executed.
+// clearTimeout() is used to cancel a timeout
+// that was previously scheduled using setTimeout().
+
+
+   // clearTimeout(st);  // it stops , immediatly , no change occur by adding the element , so we want to stop it wehn we have some event
+
+  document.querySelector('#stop').addEventListener('click' , function(e) {
+    console.log("STOPPED");         // now when we press the stop then only setTimeout is stoppped
+         clearTimeout(st); 
+  })
+
+
+
+</script>
+</html>

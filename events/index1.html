@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // }
+
+     // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)        // here we have used the false , these are the event propogation 
+     
+
+         // we can have use the true also 
+         // false is known as the the bubble propogation
+         // true is known as the capturing mode
+         // they appear to be having same function 
+         // these will show diff when we use the events in the objects with the the objects having the event
+
+         // false means bublle , therefore where first clicked that willbe the frst tghen the second
+         // true means where clicked will be the second one
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()   //it is used to stop koving to other ecvent if when clicked on thi event will call the other
+    // }, false)
+    
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault(); // will stop the defalut bvehavior of the e
+    //     e.stopPropagation()
+    //     console.log("google clicked");
+    // }, false)
+   
+
+    //   what is the E ??? Give me the information about the click event that caused this function to run."
+    
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target);
+        if (e.target.tagName === 'IMG') {
+           // console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    
+        
+    })
+    
+    //removeIt.parentNode.removeChild(removeIt)
+</script>
+</html>

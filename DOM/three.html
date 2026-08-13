@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 3</title>
+</head>
+<body style="background-color: #212121; color: beige;" >
+
+</body>
+
+<script> 
+
+  const p = document.createElement('div')
+  console.log(p);
+  p.style.backgroundColor = "red";
+
+  p.setAttribute("class" , "hey")
+  p.setAttribute("id" , 234214)
+  //p.innerHTML = "this is bhaskar"
+  const z =  document.createTextNode("bhaskar")
+  p.appendChild(z);
+
+  document.body.append(p);
+
+
+</script>
+</html>
